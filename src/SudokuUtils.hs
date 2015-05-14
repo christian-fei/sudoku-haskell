@@ -2,10 +2,7 @@ module SudokuUtils
 where
 
 existsInRow :: [[Int]] -> Int -> Int -> Bool
-existsInRow cs r n = existsIn (cs !! r) n
-
-existsIn :: [Int] -> Int -> Bool
-existsIn cs n = elem n cs
+existsInRow cs r n = elem n (cs !! r)
 
 existsInColumn :: [[Int]] -> Int -> Int -> Bool
-existsInColumn ss c n = existsIn (map (\row -> row !! c) ss) n
+existsInColumn ss c n = elem n (map (\row -> row !! c) ss)
