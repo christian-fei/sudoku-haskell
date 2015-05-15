@@ -11,7 +11,8 @@ main = defaultMain tests
 tests = hUnitTestToTests $ TestList $
   [
     numberExistsInRow,
-    numberExistsInColumn
+    numberExistsInColumn,
+    numberExistsInBox
   ]
 
 numberExistsInRow =
@@ -19,6 +20,9 @@ numberExistsInRow =
 
 numberExistsInColumn =
   existsInColumn sudokuMatrix 1 1 ~?= False
+
+numberExistsInBox =
+  existsInBox sudokuMatrix 0 0 1 ~?= False
 
 sudokuMatrix :: [[Int]]
 sudokuMatrix = [
